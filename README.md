@@ -33,6 +33,16 @@ cluster.listen();
 // cluster.listen().then(() => console.log('cluster ok')).catch(e => console.error(e));
 ```
 
+## Framework
+
+We provide three invoking lifecycle to build framework, also it must return a class.
+
+- @life message(msg): <Promise> 消息通知生命周期
+- @life create(): <Promise> 启动服务生命周期
+- @life destroy(signal): <Promise> 销毁服务生命周期
+
+It is easily to build framework by three lifecycle.
+
 # License
 
 It is [MIT licensed](https://opensource.org/licenses/MIT).
