@@ -46,22 +46,31 @@ We provide three invoking lifecycle to build framework, also it must return a cl
 It is easily to build framework by three lifecycle.
 
 ```javascript
-module.exports = class Agent {
+const Koa = require('koa');
+module.exports = class Worker extends Koa {
   constructor(obj) {
-    this._app = obj;
-    this._logger = console;
+    super();
+    this.app = obj;
+    this.logger = console;
   }
 
   async create() {
-    console.log(this._app._name, 'in create lifecycle')
+    await new Promise((resolve, reject) => {
+      this.use(async ctx => ctx.body = 'Hello world');
+      this.listen(8080, err => {
+        if (err) return reject(err);
+        this.logger.log('server on `http://127.0.0.1:8080`');
+        resolve();
+      });
+    });
   }
 
   async message(msg) {
-    console.log(this._app._name, 'in message lifecycle')
+    console.log(this.app.pid, 'in message lifecycle')
   }
 
   async destroy(signal) {
-    console.log(this._app._name, 'in destroy lifecycle', signal)
+    console.log(this.app.pid, 'in destroy lifecycle', signal)
   }
 };
 ```

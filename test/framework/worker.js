@@ -2,8 +2,8 @@ const Koa = require('koa');
 module.exports = class Worker extends Koa {
   constructor(obj) {
     super();
-    this._app = obj;
-    this._logger = console;
+    this.app = obj;
+    this.logger = console;
   }
   
   async create() {
@@ -11,17 +11,17 @@ module.exports = class Worker extends Koa {
       this.use(async ctx => ctx.body = 'Hello world');
       this.listen(8080, err => {
         if (err) return reject(err);
-        this._logger.log('server on `http://127.0.0.1:8080`');
+        this.logger.log('server on `http://127.0.0.1:8080`');
         resolve();
       });
     });
   }
   
   async message(msg) {
-    console.log(this._app.pid, 'in message lifecycle')
+    console.log(this.app.pid, 'in message lifecycle')
   }
   
   async destroy(signal) {
-    console.log(this._app.pid, 'in destroy lifecycle', signal)
+    console.log(this.app.pid, 'in destroy lifecycle', signal)
   }
 };
