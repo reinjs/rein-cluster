@@ -45,6 +45,27 @@ We provide three invoking lifecycle to build framework, also it must return a cl
 
 It is easily to build framework by three lifecycle.
 
+```javascript
+module.exports = class Agent {
+  constructor(obj) {
+    this._app = obj;
+    this._logger = console;
+  }
+
+  async create() {
+    console.log(this._app._name, 'in create lifecycle')
+  }
+
+  async message(msg) {
+    console.log(this._app._name, 'in message lifecycle')
+  }
+
+  async destroy(signal) {
+    console.log(this._app._name, 'in destroy lifecycle', signal)
+  }
+};
+```
+
 # License
 
 It is [MIT licensed](https://opensource.org/licenses/MIT).
