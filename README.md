@@ -10,11 +10,13 @@ npm i @reinjs/rein-cluster
 
 ## Options
 
-- cwd <string> 项目根目录地址(绝对地址)
-- agents <array<string> | undefined> agents列表
-- maxWorkers <Number> default: os.cups().length
-- timeout <number> 超时时间 default: Infinity
-- framework <string> 服务架构名 worker.js and agent.js
+| property | type | description | default |
+| :---- | :---- | :---- | :---- |
+| cwd | `string` | project root path | `process.cwd()` |
+| agents | `array<string> | undefined` | agents list | undefined |
+| maxWorkers | `number` | worker counts | `os.cpus().length` |
+| timeout | `number` | timeout | Infinity |
+| framework | `string` | framework name or dir path | undefined |
 
 ## Usage
 
