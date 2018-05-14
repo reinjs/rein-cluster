@@ -13,7 +13,7 @@ npm i @reinjs/rein-cluster
 | property | type | description | default |
 | :---- | :---- | :---- | :---- |
 | cwd | `string` | project root path | `process.cwd()` |
-| agents | `array<string> | undefined` | agents list | undefined |
+| agents | `array<string> or undefined` | agents list | undefined |
 | maxWorkers | `number` | worker counts | `os.cpus().length` |
 | timeout | `number` | timeout | Infinity |
 | framework | `string` | framework name or dir path | undefined |
