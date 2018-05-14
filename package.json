@@ -1,0 +1,30 @@
+{
+  "name": "@reinjs/rein-cluster",
+  "version": "1.0.0",
+  "description": "The cluster module of reinjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=dev node test/index.js --service.name=rein-cluster-test --service.tag=dev --service.port=8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/reinjs/rein-cluster.git"
+  },
+  "keywords": [
+    "cluster"
+  ],
+  "author": "reinjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/reinjs/rein-cluster/issues"
+  },
+  "homepage": "https://github.com/reinjs/rein-cluster#readme",
+  "dependencies": {
+    "find-root": "^1.1.0",
+    "ipc-message": "^1.0.10",
+    "is-type-of": "^1.2.0"
+  },
+  "devDependencies": {
+    "koa": "^2.5.1"
+  }
+}
