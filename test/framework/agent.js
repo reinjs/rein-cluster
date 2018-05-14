@@ -1,18 +1,18 @@
 module.exports = class Agent {
   constructor(obj) {
-    this.$app = obj;
-    this.$logger = console;
+    this._app = obj;
+    this._logger = console;
   }
   
   async create() {
-    console.log(this.$app.$name, 'in create lifecycle')
+    console.log(this._app._name, 'in create lifecycle')
   }
   
   async message(msg) {
-    console.log(this.$app.$name, 'in message lifecycle')
+    console.log(this._app._name, 'in message lifecycle')
   }
   
   async destroy(signal) {
-    console.log(this.$app.$name, 'in destroy lifecycle', signal)
+    console.log(this._app._name, 'in destroy lifecycle', signal)
   }
 };
