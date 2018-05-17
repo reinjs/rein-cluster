@@ -18,10 +18,10 @@ module.exports = class Worker extends Koa {
   }
   
   async message(msg) {
-    console.log(this.app.pid, 'in message lifecycle')
+    // console.log(this.app.pid, 'in message lifecycle')
   }
   
   async destroy(signal) {
-    console.log(this.app.pid, 'in destroy lifecycle', signal)
+    // console.log(this.app.pid, 'in destroy lifecycle', signal)
   }
 };

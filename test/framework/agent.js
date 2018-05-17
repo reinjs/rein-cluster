@@ -5,14 +5,14 @@ module.exports = class Agent {
   }
   
   async create() {
-    console.log(this.app.name, 'in create lifecycle')
+    // console.log(this.app.name, 'in create lifecycle')
   }
   
   async message(msg) {
-    console.log(this.app.name, 'in message lifecycle')
+    // console.log(this.app.name, 'in message lifecycle')
   }
   
   async destroy(signal) {
-    console.log(this.app.name, 'in destroy lifecycle', signal)
+    // console.log(this.app.name, 'in destroy lifecycle', signal)
   }
 };
