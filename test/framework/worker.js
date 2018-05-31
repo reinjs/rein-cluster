@@ -7,6 +7,7 @@ module.exports = class Worker extends Koa {
   }
   
   async create() {
+    console.log(process.pid, process.argv);
     await new Promise((resolve, reject) => {
       this.use(async ctx => ctx.body = 'Hello world');
       this.listen(8080, err => {

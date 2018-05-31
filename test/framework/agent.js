@@ -2,6 +2,14 @@ module.exports = class Agent {
   constructor(obj) {
     this.app = obj;
     this.logger = console;
+    this.name = 'a';
+  }
+  
+  async extra() {
+    return {
+      a: 1,
+      b: 2
+    }
   }
   
   async create() {
