@@ -1,6 +1,6 @@
 {
   "name": "@reinjs/rein-cluster",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The cluster module of reinjs",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,8 @@
     "@reinjs/rein-utils": "^1.0.0",
     "find-root": "^1.1.0",
     "ipc-message": "^1.0.10",
-    "is-type-of": "^1.2.0"
+    "is-type-of": "^1.2.0",
+    "detect-port": "^1.2.3"
   },
   "devDependencies": {
     "koa": "^2.5.1"
